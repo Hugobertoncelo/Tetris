@@ -16,7 +16,7 @@ Tetris, o icônico jogo de quebra-cabeça, agora no seu navegador! Desenvolvido 
 
 O projeto trata-se de uma aplicação web, não requer instalação, e está hospedado através do serviço de hospedagem do Github Pages. Para jogar acesse o link:
 
-<h2><a href="https://Hugobertoncelo.github.io/Tetris/">Jogar</a></h2>
+<h2><a href="https://hugobertoncelo.github.io/Tetris/">Jogar</a></h2>
 
 ## Como usar
 
