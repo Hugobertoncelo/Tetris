@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (timerId && downPresssed) {
           moveDown();
         }
-      }, 50);
+      }, 100);
 
       buttonDown.addEventListener("mouseup", () => {
         downPresssed = false;
