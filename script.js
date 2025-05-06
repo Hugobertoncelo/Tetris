@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sndGameOver.play();
       h1Title.innerHTML = "Game Over!";
       buttonPause.setAttribute("hidden", true);
-      buttonReset.innerHTML = "Play again";
+      buttonReset.innerHTML = "Jogue novamente";
       buttonReset.style.width = "160px";
       buttonUp.setAttribute("hidden", true);
       buttonLeft.setAttribute("hidden", true);
@@ -329,7 +329,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   buttonReset.addEventListener("click", () => {
-
     playGame();
     buttonAbout.style.width = "40px";
     buttonReset.style.width = "40px";
@@ -348,6 +347,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (timerId) rotate();
   });
 
+  let downPresssed = false;
+
+  buttonDown.addEventListener("mousedown", () => {
+    if (timerId && !downPresssed) {
+      downPresssed = true;
+      moveDown();
+
+      const fastDownInterval = setInterval(() => {
+        if (timerId && downPresssed) {
+          moveDown();
+        }
+      }, 100);
+
+      buttonDown.addEventListener("mouseup", () => {
+        downPresssed = false;
+        clearInterval(fastDownInterval);
+      }, { once: true });
+      buttonDown.addEventListener("mouseleave", () => {
+        downPresssed = false;
+        clearInterval(fastDownInterval);
+      }, { once: true });
+    }
+  });
+
   buttonLeft.addEventListener("click", () => {
     sndMove.play();
     if (timerId) moveLeft();
@@ -356,11 +379,6 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonRight.addEventListener("click", () => {
     sndMove.play();
     if (timerId) moveRight();
-  });
-
-  buttonDown.addEventListener("click", () => {
-    sndMove.play();
-    if (timerId) moveDown();
   });
 
   buttonMute.addEventListener("click", () => {
@@ -388,4 +406,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     window.open("https://github.com/Hugobertoncelo/Tetris", "_blank");
   });
+
+  playGame();
 });
