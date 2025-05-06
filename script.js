@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function pauseGame() {
     if (timerId) {
-      h1Title.innerHTML = "Game Paused!";
+      h1Title.innerHTML = "Jogo pausado!";
       sndBackground.pause();
       clearInterval(timerId);
       timerId = null;
