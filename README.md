@@ -5,7 +5,7 @@ Tetris-js é uma implementação do clássico jogo Tetris utilizando html, css e
 </p>
 
 <p>
-<img src="./img/preview.png" width="480px" height="480px" />
+<img src="./img/tetris.png" width="480px" height="480px" />
 </p>
 
 ## Sobre
